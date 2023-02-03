@@ -1,0 +1,7 @@
+printf "Pre-Push Hook"
+fvm flutter analyze
+
+if [ $? -ne 0 ]; then
+		printf "Issues with Flutter Analyze found, aborting push"
+    exit 1
+fi

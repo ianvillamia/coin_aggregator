@@ -1,0 +1,6 @@
+# printf "Pre-Commit Hook"
+
+# Run flutter format 
+# change to use `fvm flutter format lib/ test/` when using FVM
+fvm flutter format lib/ test/ plugins/**/lib/ --line-length=150
+
