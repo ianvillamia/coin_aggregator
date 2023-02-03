@@ -34,5 +34,5 @@ class CoinDto {
   final bool? isNew;
 
   @JsonKey(name: 'is_active')
-  final String? type;
+  final bool? type;
 }

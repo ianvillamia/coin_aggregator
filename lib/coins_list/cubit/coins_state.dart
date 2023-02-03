@@ -1,6 +1,10 @@
-part of 'coins_cubit.dart';
+part of 'coins_list_cubit.dart';
 
-@immutable
-abstract class CoinsState {}
-
-class CoinsInitial extends CoinsState {}
+@freezed
+class CoinsState with _$CoinsState {
+  const factory CoinsState.loading() = _CoinsLoading;
+  const factory CoinsState.finished({
+    required List<CustomCoinDto> coins,
+  }) = _CoinsFinished;
+  const factory CoinsState.error(String? error) = _CoinsError;
+}

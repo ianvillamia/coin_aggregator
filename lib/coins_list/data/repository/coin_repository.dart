@@ -1,1 +1,0 @@
-/// TODO Coin Repo abstract class

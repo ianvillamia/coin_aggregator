@@ -12,7 +12,7 @@ CoinDto _$CoinDtoFromJson(Map<String, dynamic> json) => CoinDto(
       symbol: json['symbol'] as String?,
       rank: json['rank'] as int?,
       isNew: json['is_new'] as bool?,
-      type: json['is_active'] as String?,
+      type: json['is_active'] as bool?,
     );
 
 Map<String, dynamic> _$CoinDtoToJson(CoinDto instance) => <String, dynamic>{
