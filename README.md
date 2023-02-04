@@ -27,14 +27,14 @@ Lets get this straight haha its very messy if everyone just does whatever they w
  <img src="folder-structure.png" width="350" title="Folder Structure">
 
 ### More Details
-    - Uploader(feature folder)
+    - coins_list(feature folder)
         - data
             - bloc (bloc/cubits)
             - models (models whithin coins only)
             - repository
                 - coins_repository(`abstract class` serves as a blueprint)
                 - coins_repository_impl(`implementation` actual implementation of coins_repository)
-            - services (services specific to uploader only)
+            - services (services specific to coins_list only)
 
         if(featureScreen == 1 page)
         - view
@@ -51,7 +51,7 @@ Lets get this straight haha its very messy if everyone just does whatever they w
                     - widgets(widgets within the page)
                     - page_2.dart (actual page)
                     
-            - uploader_page.dart (main page)
+            - coin_list_page.dart (main page)
 
     - lib/core/global_widgets - (global widgets)
 
