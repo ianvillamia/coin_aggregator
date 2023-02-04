@@ -94,8 +94,6 @@ open coverage/index.html
 ```
 
 
-### hmmm what else provider of course, mocktail for testing,then everything else comes from the boiler plate 😉
-
 ### ahhh wait before you get started coding kindly run this script 🙏
 ``sh scripts/init_hooks.sh``
 
