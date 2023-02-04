@@ -3,6 +3,7 @@ import 'package:coin_aggregator/coins_list/view/widgets/coin_tile.dart';
 import 'package:coin_aggregator/core/app_text_styles.dart';
 import 'package:coin_aggregator/core/global_widgets/current_date_time_widget.dart';
 import 'package:coin_aggregator/core/global_widgets/user_profile_image.dart';
+import 'package:coin_aggregator/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,10 +12,11 @@ class CoinListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'POGICOIN',
+        title: Text(
+          l10n.coin_app_bar,
           style: AppTextStyles.xL_w900,
         ),
         actions: const [
@@ -28,12 +30,12 @@ class CoinListPage extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
-                  'Top Coins',
+                  l10n.coin_top_coins,
                   style: AppTextStyles.L_w900,
                 ),
-                CurrentDateTimeWidget(),
+                const CurrentDateTimeWidget(),
               ],
             ),
             Expanded(
@@ -62,7 +64,7 @@ class CoinListPage extends StatelessWidget {
                     },
                     error: (errorState) {
                       return Center(
-                        child: Text(errorState.error ?? ''),
+                        child: Text(errorState.error ?? l10n.something),
                       );
                     },
                     orElse: () {

@@ -35,7 +35,7 @@ class CoinDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          l10n.coin_details_appbar_title,
+          l10n.coin_back,
           style: AppTextStyles.xL_w900,
         ),
         centerTitle: false,
@@ -54,7 +54,7 @@ class CoinDetails extends StatelessWidget {
                 children: [
                   _firstSection(),
                   const SizedBox(height: 16),
-                  _secondSection(),
+                  _secondSection(l10n),
                 ],
               ),
             ),
@@ -97,32 +97,32 @@ class CoinDetails extends StatelessWidget {
   }
 
   /// Contains High,low,open,close,volume,marketCap
-  Widget _secondSection() {
+  Widget _secondSection(AppLocalizations l10n) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildTextRow(
-          'High',
+          l10n.coin_high,
           coin.ohlcv?.high.toString() ?? '',
         ),
         _buildTextRow(
-          'Low',
+          l10n.coin_low,
           coin.ohlcv?.low.toString() ?? '',
         ),
         _buildTextRow(
-          'Open',
+          l10n.coin_open,
           coin.ohlcv?.low.toString() ?? '',
         ),
         _buildTextRow(
-          'Close',
+          l10n.coin_close,
           coin.ohlcv?.close.toString() ?? '',
         ),
         _buildTextRow(
-          'Volume',
+          l10n.coin_volume,
           coin.ohlcv?.volume.toString() ?? '',
         ),
         _buildTextRow(
-          'MarketCap',
+          l10n.coin_market_cap,
           coin.ohlcv?.marketCap.toString() ?? '',
         ),
       ],

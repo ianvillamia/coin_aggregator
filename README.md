@@ -67,6 +67,10 @@ and here's how to use it
 <img src="routing_usage.png" width="350" title="Routing Usage">
 
 
+### For the Dependency Injection
+getIt
+
+
 ### For the api services opted to use 
 Retrofit+Dio combo 💡
 

@@ -1,8 +1,14 @@
 {
     "@@locale": "en",
     "something": "Something",
-    "coin_details_appbar_title" : "Back",
+    "coin_back" : "Back",
     "coin_app_bar": "POGICOIN",
-    "coin_top_coins": "Top Coins"
+    "coin_top_coins": "Top Coins",
+    "coin_high": "High",
+    "coin_low": "Low",
+    "coin_open" : "Open",
+    "coin_close" : "Close",
+    "coin_volume" : "Volume",
+    "coin_market_cap" : "Market Cap"
 
 }
