@@ -14,10 +14,14 @@ CustomCoinDto _$CustomCoinDtoFromJson(Map<String, dynamic> json) =>
       ohlcv: json['ohlcv'] == null
           ? null
           : OHLCVDto.fromJson(json['ohlcv'] as Map<String, dynamic>),
+      ticker: json['ticker'] == null
+          ? null
+          : TickerDto.fromJson(json['ticker'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CustomCoinDtoToJson(CustomCoinDto instance) =>
     <String, dynamic>{
       'coin': instance.coin,
       'ohlcv': instance.ohlcv,
+      'ticker': instance.ticker,
     };

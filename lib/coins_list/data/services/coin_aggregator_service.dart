@@ -1,5 +1,6 @@
 import 'package:coin_aggregator/coins_list/data/models/coin_dto.dart';
 import 'package:coin_aggregator/coins_list/data/models/ohlcv_dto.dart';
+import 'package:coin_aggregator/coins_list/data/models/ticker_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -14,7 +15,7 @@ abstract class CoinAggregatorApiService {
 
   /// calls https://api.coinpaprika.com/v1/coins
   @GET('coins')
-  Future<HttpResponse<List<CoinDto>>> getCoins();
+  Future<HttpResponse<List<CoinDto>>> getAllCoins();
 
   /// calls https://api.coinpaprika.com/v1/coins/{coin_id}
   @GET('coins/{coin_id}/')
@@ -27,4 +28,8 @@ abstract class CoinAggregatorApiService {
   Future<HttpResponse<List<OHLCVDto>>> getCoinOHLC(
     @Path('coin_id') String coin,
   );
+
+  /// calls https://api.coinpaprika.com/v1/tickers
+  @GET('tickers')
+  Future<HttpResponse<List<TickerDto>>> getAllTickers();
 }

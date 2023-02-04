@@ -190,6 +190,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.4"
+  dice_bear:
+    dependency: "direct main"
+    description:
+      name: dice_bear
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.5"
   diff_match_patch:
     dependency: transitive
     description:
@@ -232,6 +239,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.60.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -256,6 +270,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.7"
+  flutter_svg:
+    dependency: transitive
+    description:
+      name: flutter_svg
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.6"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -532,6 +553,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
+  path_drawing:
+    dependency: transitive
+    description:
+      name: path_drawing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
+  path_parsing:
+    dependency: transitive
+    description:
+      name: path_parsing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.1.0"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -768,6 +810,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.1.0"
   yaml:
     dependency: transitive
     description:
@@ -777,4 +826,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=2.18.0 <3.0.0"
-  flutter: ">=2.10.0"
+  flutter: ">=2.11.0-0.1.pre"

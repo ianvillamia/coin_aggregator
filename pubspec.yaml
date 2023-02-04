@@ -8,8 +8,10 @@ environment:
 dependencies:
   bloc: ^8.0.3
   cupertino_icons: ^1.0.5
+  dice_bear: ^0.1.5
   dio: ^4.0.0
   equatable: ^2.0.5
+  fl_chart: ^0.60.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1

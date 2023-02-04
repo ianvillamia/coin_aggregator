@@ -20,10 +20,10 @@ class OHLCVDto {
   }
   Map<String, dynamic> toJson() => _$OHLCVDtoToJson(this);
 
-  @JsonKey(name: 'timeOpen')
+  @JsonKey(name: 'time_open')
   final String? timeOpen;
 
-  @JsonKey(name: 'timeClose')
+  @JsonKey(name: 'time_close')
   final String? timeClose;
 
   @JsonKey(name: 'open')
@@ -41,6 +41,6 @@ class OHLCVDto {
   @JsonKey(name: 'volume')
   final int? volume;
 
-  @JsonKey(name: 'marketCap')
+  @JsonKey(name: 'market_cap')
   final int? marketCap;
 }
