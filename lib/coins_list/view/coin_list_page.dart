@@ -62,7 +62,7 @@ class CoinListPage extends StatelessWidget {
                     },
                     error: (errorState) {
                       return Center(
-                        child: Text(errorState.error ?? 'Something'),
+                        child: Text(errorState.error ?? ''),
                       );
                     },
                     orElse: () {

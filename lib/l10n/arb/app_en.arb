@@ -1,5 +1,8 @@
 {
     "@@locale": "en",
-    "coin_details_appbar_title" : "Back"
+    "something": "Something",
+    "coin_details_appbar_title" : "Back",
+    "coin_app_bar": "POGICOIN",
+    "coin_top_coins": "Top Coins"
 
 }
