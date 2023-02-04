@@ -1,6 +1,6 @@
 {
     "@@locale": "en",
-    "something": "Something",
+    "something_went_wrong": "Something went wrong",
     "coin_back" : "Back",
     "coin_app_bar": "POGICOIN",
     "coin_top_coins": "Top Coins",

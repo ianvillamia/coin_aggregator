@@ -64,7 +64,9 @@ class CoinListPage extends StatelessWidget {
                     },
                     error: (errorState) {
                       return Center(
-                        child: Text(errorState.error ?? l10n.something),
+                        child: Text(
+                          errorState.error ?? l10n.something_went_wrong,
+                        ),
                       );
                     },
                     orElse: () {

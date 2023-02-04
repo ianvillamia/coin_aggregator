@@ -1,32 +1,46 @@
+import 'package:coin_aggregator/coins_list/cubit/coin_details_cubit.dart';
 import 'package:coin_aggregator/coins_list/data/models/custom_coin_dto.dart';
 import 'package:coin_aggregator/core/app_text_styles.dart';
 import 'package:coin_aggregator/core/global_widgets/current_date_time_widget.dart';
 import 'package:coin_aggregator/l10n/l10n.dart';
 import 'package:dice_bear/dice_bear.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CoinDetails extends StatelessWidget {
+class CoinDetails extends StatefulWidget {
   const CoinDetails({
     super.key,
-    required this.coin,
     required this.avatar,
   });
 
-  final CustomCoinDto coin;
   final Avatar avatar;
 
   static const String routeName = '/coin-details';
   static ModalRoute<void> route({
-    required CustomCoinDto coin,
     required Avatar avatar,
+    required CustomCoinDto coin,
   }) {
     return MaterialPageRoute<void>(
       settings: const RouteSettings(name: routeName),
-      builder: (_) => CoinDetails(
-        coin: coin,
-        avatar: avatar,
+      builder: (_) => BlocProvider(
+        create: (context) => CoinDetailsCubit(coinDto: coin),
+        child: CoinDetails(avatar: avatar),
       ),
     );
+  }
+
+  @override
+  State<CoinDetails> createState() => _CoinDetailsState();
+}
+
+class _CoinDetailsState extends State<CoinDetails> {
+  @override
+  void initState() {
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<CoinDetailsCubit>().initialize();
+    });
+    super.initState();
   }
 
   @override
@@ -40,39 +54,52 @@ class CoinDetails extends StatelessWidget {
         ),
         centerTitle: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            const SizedBox(height: 8),
-            const CurrentDateTimeWidget(),
-            Card(
-              elevation: 10,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _firstSection(),
-                  const SizedBox(height: 16),
-                  _secondSection(l10n),
-                ],
-              ),
+      body: BlocBuilder<CoinDetailsCubit, CoinDetailsState>(
+        builder: (context, state) {
+          if (state.hasError ?? false) {
+            return Center(
+              child: Text(l10n.something_went_wrong),
+            );
+          } else if (state.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const SizedBox(height: 8),
+                const CurrentDateTimeWidget(),
+                Card(
+                  elevation: 10,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _firstSection(state.coin),
+                      const SizedBox(height: 16),
+                      _secondSection(l10n, state.coin),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
 
   /// Contains coin image, coin name,symbol, price
-  Widget _firstSection() {
+  Widget _firstSection(CustomCoinDto coin) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         SizedBox(
           width: 150,
           height: 150,
-          child: avatar.toImage(),
+          child: widget.avatar.toImage(),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +124,7 @@ class CoinDetails extends StatelessWidget {
   }
 
   /// Contains High,low,open,close,volume,marketCap
-  Widget _secondSection(AppLocalizations l10n) {
+  Widget _secondSection(AppLocalizations l10n, CustomCoinDto coin) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

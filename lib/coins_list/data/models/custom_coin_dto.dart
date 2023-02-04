@@ -18,4 +18,16 @@ class CustomCoinDto {
   final CoinDto? coin;
   final OHLCVDto? ohlcv;
   final TickerDto? ticker;
+
+  CustomCoinDto copyWith({
+    CoinDto? coin,
+    OHLCVDto? ohlcv,
+    TickerDto? ticker,
+  }) {
+    return CustomCoinDto(
+      coin: coin ?? this.coin,
+      ohlcv: ohlcv ?? this.ohlcv,
+      ticker: ticker ?? this.ticker,
+    );
+  }
 }

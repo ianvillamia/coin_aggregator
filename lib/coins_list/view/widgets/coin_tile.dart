@@ -26,8 +26,8 @@ class CoinsTile extends StatelessWidget {
         onTap: () => Navigator.push(
           context,
           CoinDetails.route(
-            coin: coin,
             avatar: _avatar,
+            coin: coin,
           ),
         ),
         child: Padding(
