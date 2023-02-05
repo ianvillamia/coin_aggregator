@@ -10,20 +10,20 @@ part 'coin_details_cubit.freezed.dart';
 
 class CoinDetailsCubit extends Cubit<CoinDetailsState> {
   CoinDetailsCubit({
-    required this.coinDto,
+    required this.coin,
   }) : super(
           CoinDetailsState(
-            coin: coinDto,
+            coin: coin,
             isLoading: true,
           ),
         );
 
-  final CustomCoinDto coinDto;
+  final CustomCoinDto coin;
 
   Future<void> initialize() async {
     try {
-      final coin = await getIt<CoinsRepository>().getOLHC(coinDto);
-      if (coin != null) {
+      final _coin = await getIt<CoinsRepository>().getOLHC(coin);
+      if (_coin != null) {
         emit(state.copyWith(coin: coin, isLoading: false));
       }
     } on DioError catch (_) {

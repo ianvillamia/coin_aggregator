@@ -24,7 +24,7 @@ class CoinDetails extends StatefulWidget {
     return MaterialPageRoute<void>(
       settings: const RouteSettings(name: routeName),
       builder: (_) => BlocProvider(
-        create: (context) => CoinDetailsCubit(coinDto: coin),
+        create: (context) => CoinDetailsCubit(coin: coin),
         child: CoinDetails(avatar: avatar),
       ),
     );
