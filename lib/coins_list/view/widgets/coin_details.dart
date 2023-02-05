@@ -1,11 +1,10 @@
 import 'package:coin_aggregator/coins_list/cubit/coin_details_cubit.dart';
-import 'package:coin_aggregator/coins_list/data/models/custom_coin_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/custom_coin_dto.dart';
 import 'package:coin_aggregator/core/app_text_styles.dart';
 import 'package:coin_aggregator/core/global_widgets/current_date_time_widget.dart';
 import 'package:coin_aggregator/l10n/l10n.dart';
 import 'package:dice_bear/dice_bear.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CoinDetails extends StatefulWidget {
@@ -37,9 +36,7 @@ class CoinDetails extends StatefulWidget {
 class _CoinDetailsState extends State<CoinDetails> {
   @override
   void initState() {
-    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read<CoinDetailsCubit>().initialize();
-    });
+    context.read<CoinDetailsCubit>().initialize();
     super.initState();
   }
 

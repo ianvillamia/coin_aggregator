@@ -1,4 +1,4 @@
-import 'package:coin_aggregator/coins_list/data/models/custom_coin_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/custom_coin_dto.dart';
 import 'package:coin_aggregator/coins_list/view/widgets/coin_details.dart';
 import 'package:coin_aggregator/core/app_colors.dart';
 import 'package:coin_aggregator/core/app_text_styles.dart';

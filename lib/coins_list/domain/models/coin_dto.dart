@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'coin_dto.g.dart';
+part '../../domain/models/coin_dto.g.dart';
 
 @JsonSerializable()
 class CoinDto {

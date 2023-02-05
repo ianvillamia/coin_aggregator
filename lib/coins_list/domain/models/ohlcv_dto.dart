@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'ohlcv_dto.g.dart';
+part '../../domain/models/ohlcv_dto.g.dart';
 
 @JsonSerializable()
 class OHLCVDto {

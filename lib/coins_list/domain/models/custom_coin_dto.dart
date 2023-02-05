@@ -1,9 +1,9 @@
-import 'package:coin_aggregator/coins_list/data/models/coin_dto.dart';
-import 'package:coin_aggregator/coins_list/data/models/ohlcv_dto.dart';
-import 'package:coin_aggregator/coins_list/data/models/ticker_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/coin_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/ohlcv_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/ticker_dto.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'custom_coin_dto.g.dart';
+part '../../domain/models/custom_coin_dto.g.dart';
 
 @JsonSerializable()
 class CustomCoinDto {

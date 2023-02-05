@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'base_quote_dto.g.dart';
+part '../../domain/models/base_quote_dto.g.dart';
 
 @JsonSerializable()
 class BaseQuoteDto {

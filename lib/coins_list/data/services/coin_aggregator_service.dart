@@ -1,6 +1,6 @@
-import 'package:coin_aggregator/coins_list/data/models/coin_dto.dart';
-import 'package:coin_aggregator/coins_list/data/models/ohlcv_dto.dart';
-import 'package:coin_aggregator/coins_list/data/models/ticker_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/coin_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/ohlcv_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/ticker_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

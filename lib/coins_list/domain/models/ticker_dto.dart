@@ -1,7 +1,7 @@
-import 'package:coin_aggregator/coins_list/data/models/quotes_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/quotes_dto.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'ticker_dto.g.dart';
+part '../../domain/models/ticker_dto.g.dart';
 
 @JsonSerializable()
 class TickerDto {

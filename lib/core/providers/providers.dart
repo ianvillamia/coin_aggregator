@@ -1,6 +1,6 @@
-import 'package:coin_aggregator/coins_list/data/repository/coins_repository.dart';
-import 'package:coin_aggregator/coins_list/data/repository/coins_repository_impl.dart';
 import 'package:coin_aggregator/coins_list/data/services/coin_aggregator_service.dart';
+import 'package:coin_aggregator/coins_list/domain/repository/coins_repository.dart';
+import 'package:coin_aggregator/coins_list/domain/repository/coins_repository_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 

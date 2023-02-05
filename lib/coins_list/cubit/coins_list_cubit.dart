@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:coin_aggregator/coins_list/data/models/custom_coin_dto.dart';
-import 'package:coin_aggregator/coins_list/data/repository/coins_repository.dart';
+import 'package:coin_aggregator/coins_list/domain/models/custom_coin_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/repository/coins_repository.dart';
 import 'package:coin_aggregator/core/providers/providers.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

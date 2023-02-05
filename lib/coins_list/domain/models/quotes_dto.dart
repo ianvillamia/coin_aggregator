@@ -1,7 +1,7 @@
-import 'package:coin_aggregator/coins_list/data/models/base_quote_dto.dart';
+import 'package:coin_aggregator/coins_list/domain/models/base_quote_dto.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'quotes_dto.g.dart';
+part '../../domain/models/quotes_dto.g.dart';
 
 @JsonSerializable()
 class QuotesDto {
