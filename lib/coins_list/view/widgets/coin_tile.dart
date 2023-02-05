@@ -109,6 +109,7 @@ class CoinsTile extends StatelessWidget {
     }
     return Expanded(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           SizedBox(
             width: 60,
