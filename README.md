@@ -28,13 +28,14 @@ Lets get this straight haha its very messy if everyone just does whatever they w
 
 ### More Details
     - coins_list(feature folder)
-        - data
+        - data(api/3rd party services)
+            -  services (services specific to coins_list only)
+        - domain
             - bloc (bloc/cubits)
             - models (models whithin coins only)
             - repository
                 - coins_repository(`abstract class` serves as a blueprint)
                 - coins_repository_impl(`implementation` actual implementation of coins_repository)
-            - services (services specific to coins_list only)
 
         if(featureScreen == 1 page)
         - view
