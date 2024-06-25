@@ -43,15 +43,14 @@ class LineChartWidget extends StatelessWidget {
       child: LineChart(
         LineChartData(
           borderData: FlBorderData(show: false),
-          gridData: FlGridData(show: false),
-          titlesData: FlTitlesData(show: false),
+          gridData: const FlGridData(show: false),
+          titlesData: const FlTitlesData(show: false),
           lineBarsData: [
             LineChartBarData(
               spots: points.map((e) => FlSpot(e.x, e.y)).toList(),
-              isCurved: false,
               color: color,
-              dotData: FlDotData(show: false),
-            )
+              dotData: const FlDotData(show: false),
+            ),
           ],
         ),
       ),

@@ -36,7 +36,9 @@ class CoinDetails extends StatefulWidget {
 class _CoinDetailsState extends State<CoinDetails> {
   @override
   void initState() {
-    context.read<CoinDetailsCubit>().initialize();
+    if (mounted) {
+      context.read<CoinDetailsCubit>().initialize();
+    }
     super.initState();
   }
 
@@ -100,6 +102,7 @@ class _CoinDetailsState extends State<CoinDetails> {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
               coin.coin?.name ?? '',
@@ -110,12 +113,12 @@ class _CoinDetailsState extends State<CoinDetails> {
               style: AppTextStyles.M_w900,
             ),
             Text(
-              // ignore: lines_longer_than_80_chars
-              '${coin.ticker?.symbol} ${coin.ticker?.quotes?.usd?.price}',
+              '${coin.ticker?.symbol} ${coin.ticker?.quotes?.usd?.price?.round()}',
               style: AppTextStyles.L_w900,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -168,7 +171,7 @@ class _CoinDetailsState extends State<CoinDetails> {
           Text(
             value,
             style: AppTextStyles.L,
-          )
+          ),
         ],
       ),
     );

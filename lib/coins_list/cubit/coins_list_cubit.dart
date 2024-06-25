@@ -18,7 +18,7 @@ class CoinsCubit extends Cubit<CoinsState> {
       if (coins.isNotEmpty) {
         emit(CoinsState.finished(coins: coins));
       }
-    } on DioError catch (_) {
+    } on DioException catch (_) {
       return emit(const CoinsState.error('Something went wrong'));
     }
   }

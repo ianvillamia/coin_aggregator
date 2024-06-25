@@ -26,7 +26,7 @@ class CoinDetailsCubit extends Cubit<CoinDetailsState> {
       if (_coin != null) {
         emit(state.copyWith(coin: _coin, isLoading: false));
       }
-    } on DioError catch (_) {
+    } on DioException catch (_) {
       emit(state.copyWith(hasError: true));
     }
   }
